@@ -6,7 +6,7 @@ int main ()
 		ClapTrap b("Bertrand");
 
 		a.attack("some other robot");
-		a.takeDamage(9);
+		a.takeDamage(4294967295);
 		a.takeDamage(2);
 		a.beRepaired(5);
 		a.attack("some other other robot");

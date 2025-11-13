@@ -1,10 +1,5 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): _Name("random"), _HitPoints(10), _EnergyPoints(10), _AttackDamage(0)
-{
-    std::cout << "Constructor (void) of " << this->_Name << " called" << std::endl;
-}
-
 ClapTrap::ClapTrap(std::string Name): _Name(Name), _HitPoints(10), _EnergyPoints(10), _AttackDamage(0)
 {
     std::cout << "Constructor of " << this->_Name << " called" << std::endl;
@@ -43,14 +38,17 @@ void ClapTrap::attack(const std::string& target) // initialiser attributs attack
     return;
 }
 
+// je naccpete aucun nombre negatif ou superieur a un int Max, ducoup problematique?
 void ClapTrap::takeDamage(unsigned int amount)
 {
+    if((int)amount <= 0 || amount >= INT_MAX)
+        return;
     if(this->_HitPoints == 0)
     {
         std::cout << "ClapTrap " << this->_Name << " cannot take damage (already dead) " << std::endl;
         return;
     }
-    if (amount >= _HitPoints)
+    if ((int)amount >= _HitPoints)
         _HitPoints = 0;
     else
         _HitPoints -= amount;
@@ -59,6 +57,8 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+    if((int)amount <= 0 || amount >= INT_MAX)
+        return;
     if(this->_EnergyPoints > 0 && this->_HitPoints > 0)
     {
         this->_HitPoints += amount;

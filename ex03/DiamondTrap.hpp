@@ -5,10 +5,12 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
+//proteger entree + forme canonique
+
 class DiamondTrap : public FragTrap, public ScavTrap
 {
     private :
-        std::string _Name; // doit contenir la meme valeur que _Name de ClapTrap b
+        std::string _Name;
         
     public :
         DiamondTrap(std::string Name);

@@ -3,16 +3,17 @@
 
 #include <iostream>
 #include <string>
+#include <climits>
 
-class ClapTrap 
+class ClapTrap // forme canonique
 {
     protected :
         std::string _Name;
-        uint _HitPoints;
-        uint _EnergyPoints;
-        uint _AttackDamage;
+        int _HitPoints;
+        int _EnergyPoints;
+        int _AttackDamage;
 
-    public :
+    public : //garder les contructeurs vide ? verifier sujet
         ClapTrap(void);
         ClapTrap(std::string Name);
         ClapTrap(const ClapTrap &other); // constructeur de copie
