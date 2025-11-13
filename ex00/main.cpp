@@ -2,13 +2,13 @@
 
 int main ()
 {
-		ClapTrap a;
+		ClapTrap a("Justin");
 		ClapTrap b("Bertrand");
 
 		a.attack("some other robot");
 		a.takeDamage(4294967295);
 		a.takeDamage(2);
-		a.beRepaired(5);
+		a.beRepaired(-5);
 		a.attack("some other other robot");
 		b.beRepaired(3);
 		for (int i = 0; i < 12; i++)

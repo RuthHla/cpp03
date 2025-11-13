@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap(std::string Name): _Name(Name), _HitPoints(10), _EnergyPoints(10), _AttackDamage(0)
 {
-    std::cout << "Constructor of " << this->_Name << " called" << std::endl;
+    std::cout << "ClapTrap Constructor of " << this->_Name << " called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
@@ -23,7 +23,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor of " << this->_Name << " called" << std::endl;
+    std::cout << "ClapTrap Destructor of " << this->_Name << " called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target) // initialiser attributs attackDamage plutot ?
